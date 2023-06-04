@@ -10,11 +10,11 @@ Define a function, `lastFridayNight`, takes an array of transactions.
 let transactions = [
   {
     name: "Tons of glitter",
-    amount: 70
+    amount: 70,
   },
   {
     name: "Porcelain Pink Flamingos",
-    amount: 92
+    amount: 92,
   },
   {
     name: "Chandelier replacement",
@@ -22,9 +22,9 @@ let transactions = [
   },
   {
     name: "Dinner at TGIF x6",
-    amount: 350
-  }
+    amount: 350,
+  },
 ];
 
-sumTransactions(transactions) // => 10512
+sumTransactions(transactions); // => 10512
 ```
