@@ -41,30 +41,43 @@ let animalNoises = [
 ];
 
 // YOUR CODE BELOW
-const petSounds = (animal, country) => {
-  // console.log(animalNoises);
-  let animal_voice = "";
-  for (let i = 0; i < animalNoises.length; i++) {
-    // console.log(animalNoises[i]);
-    for (let key in animalNoises[i]) {
-      if (key === animal) {
-        // console.log(animalNoises[i][key]);
-        let v = animalNoises[i][key];
-        for (let key in v) {
-          if (key === country) {
-            // console.log(key);
-            // console.log(v[key]);
-            animal_voice = v[key];
-          }
-        }
-      }
-    }
-  }
-  animal = animal.charAt(0).toUpperCase() + animal.slice(1) + "s";
-  country = country.charAt(0).toUpperCase() + country.slice(1);
-  // console.log(animal, country);
-  final_string = `${animal} in ${country} say ${animal_voice}`;
-  return final_string;
-};
+// const petSounds = (animal, country) => {
+//   // console.log(animalNoises);
+//   let animal_voice = "";
+//   for (let i = 0; i < animalNoises.length; i++) {
+//     // console.log(animalNoises[i]);
+//     for (let key in animalNoises[i]) {
+//       if (key === animal) {
+//         // console.log(animalNoises[i][key]);
+//         let v = animalNoises[i][key];
+//         for (let key in v) {
+//           if (key === country) {
+//             // console.log(key);
+//             // console.log(v[key]);
+//             animal_voice = v[key];
+//           }
+//         }
+//       }
+//     }
+//   }
+//   animal = animal.charAt(0).toUpperCase() + animal.slice(1) + "s";
+//   country = country.charAt(0).toUpperCase() + country.slice(1);
+//   // console.log(animal, country);
+//   final_string = `${animal} in ${country} say ${animal_voice}`;
+//   return final_string;
+// };
 
 // console.log(petSounds("dog", "Korea"));
+function petSounds(animal, country) {
+  for (let i = 0; i < animalNoises.length; i++) {
+    let animalObject = animalNoises[i];
+    if (animal in animalObject) {
+      let countrySounds = animalObject[animal];
+      let sound = countrySounds[country];
+      animal = animal[0].toUpperCase() + animal.slice(1) + "s";
+      return `${animal} in ${country} say ${sound}`;
+    }
+  }
+}
+
+console.log(petSounds("dog", "Korea"));

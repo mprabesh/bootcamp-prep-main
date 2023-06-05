@@ -1,9 +1,9 @@
 // YOUR CODE BELOW
-const taxCalculator=(price,state)=>{
-    if(state==='NY'){
-        return price+price*0.04
-    }
-    if(state==='NJ'){
-        return price+price*0.06625
-    }
-}
+const taxCalculator = (price, state) => {
+  if (state === "NY") {
+    return price + price * 0.04;
+  }
+  if (state === "NJ") {
+    return price + price * 0.06625;
+  }
+};
