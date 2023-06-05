@@ -71,6 +71,7 @@ const leetTranslator = (text) => {
     final_string += encrypted;
   }
   console.log(final_string);
+  return final_string;
 };
 
 leetTranslator("prabesh");
