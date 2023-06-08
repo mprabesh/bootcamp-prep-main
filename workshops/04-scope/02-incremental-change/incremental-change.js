@@ -1,8 +1,7 @@
-let counter = 0;
+let counter = 0
 
 // YOUR CODE BELOW
 
-const incrementalChange = (number) => {
-  counter += number;
-  return counter;
-};
+function incrementalChange(num) {
+    return (counter = counter + num)
+}
