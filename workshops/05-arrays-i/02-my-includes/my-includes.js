@@ -1,10 +1,8 @@
-// YOUR CODE BELOW
-const myIncludes = (arr, searchVal) => {
-  for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-    if (arr[i] === searchVal) {
-      return true;
+function myIncludes(arr, searcVal) {
+    for (let k = 0; k < arr.length; k++) {
+        if (arr[k] === searcVal) {
+            return true
+        }
     }
-  }
-  return false;
-};
+    return false
+}
