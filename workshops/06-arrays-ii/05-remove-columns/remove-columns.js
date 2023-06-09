@@ -1,11 +1,23 @@
-// YOUR CODE BELOW
-const removeColumns=(arr2,numC)=>{
-for(let i=0;i<arr2.length;i++){
-    for(k=0;k<numC;k++){
-        arr2[i].pop()
+function removeColumns(originalGrid, numCols) {
+    let final_2d_array = []
+    for (let k = 0; k < originalGrid.length; k++) {
+        let temp_array = []
+        let element = originalGrid[k]
+        for (let i = 0; i < element.length - numCols; i++) {
+            temp_array.push(element[i])
+        }
+        final_2d_array.push(temp_array)
     }
+    // console.log(final_2d_array)
+    return final_2d_array
 }
-return (arr2)
 
-}
-
+removeColumns(
+    [
+        [1, 2, 3],
+        [1, 2, 3],
+        [1, 2, 3],
+        [1, 2, 3],
+    ],
+    2
+)

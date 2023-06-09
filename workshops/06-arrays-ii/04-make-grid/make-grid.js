@@ -1,15 +1,14 @@
-// YOUR CODE BELOW
-const makeGrid=(numC,numR)=>{
-    let arr=[]
-    for(let i=0;i<numR;i++){
-        arr[i]=[]
-        for(let k=0;k<numC;k++){
-            arr[i][k]=k+1
-
+function makeGrid(numCols, numRows) {
+    let final_2d_array = []
+    for (let k = 0; k < numRows; k++) {
+        let temp_array = []
+        for (let i = 0; i < numCols; i++) {
+            temp_array.push(i + 1)
         }
+        final_2d_array.push(temp_array)
     }
-    console.log(arr)
-    return arr
+    console.log(final_2d_array)
+    return final_2d_array
 }
 
-makeGrid(6,4)
+makeGrid(3, 4)

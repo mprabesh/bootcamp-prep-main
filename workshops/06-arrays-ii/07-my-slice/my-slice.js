@@ -1,25 +1,23 @@
-// YOUR CODE BELOW
-const mySlice = (arr, startIdx, endIdx) => {
-  // set start and end values
-  let new_arr = [];
-  if (endIdx === undefined) {
-    endIdx = arr.length;
-  }
-  if (startIdx === undefined) {
-    startIdx = 0;
-  }
-  if (startIdx < 0) {
-    startIdx = startIdx + arr.length;
-  }
-  if (endIdx < 0) {
-    endIdx = endIdx + arr.length;
-  }
+function mySlice(originalArr, startIdx, endIdx) {
+    if (startIdx === undefined) {
+        startIdx = 0
+    }
+    if (endIdx === undefined) {
+        endIdx = originalArr.length
+    }
+    if (startIdx < 0) {
+        startIdx = originalArr.length + startIdx
+    }
+    if (endIdx < 0) {
+        endIdx = originalArr.length + endIdx
+    }
+    let new_arr = []
+    for (let k = startIdx; k < endIdx; k++) {
+        new_arr.push(originalArr[k])
+    }
+    return new_arr
+}
 
-  for (let i = startIdx; i < endIdx; i++) {
-    new_arr.push(arr[i]);
-  }
-  console.log(new_arr);
-  return new_arr;
-};
-
-mySlice([1, 2, 3, 4, 5, 6, 7, 8, 9], -3, -2);
+// mySlice([1, 2, 3, 4, 5, 6, 7, 8, 9], 2, 6)
+mySlice([1, 2, 3]) // => [2]
+mySlice(['bagel', 'baguette', 'bialy', 'brioche'], 1, 3)

@@ -1,15 +1,9 @@
-// YOUR CODE BELOW
-const zooInventory=(arr)=>{
-    let new_arr=[]
-    for(let i=0;i<arr.length;i++){
-    let animal=arr[i][0]
-    let info=arr[i][1]
-    let species=info[0]
-    let val=info[1]
-    let final=`${animal} the ${species} is ${val}.`
-    new_arr.push(final)
+function zooInventory(arr) {
+    let final_arr = []
+    for (let k = 0; k < arr.length; k++) {
+        let element = arr[k]
+        let new_string = `${element[0]} the ${element[1][0]} is ${element[1][1]}.`
+        final_arr.push(new_string)
     }
-return new_arr;
-
+    return final_arr
 }
-

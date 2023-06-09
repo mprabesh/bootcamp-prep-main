@@ -1,23 +1,19 @@
-// YOUR CODE BELOW
+function myJoin(arr, separator) {
+    if (separator === undefined) {
+        separator = ','
+    }
+    let final_string = ''
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === undefined || arr[i] === null) {
+            arr[i] = ''
+        }
+        final_string = final_string + arr[i]
+        if (i !== arr.length - 1) {
+            final_string = final_string + separator
+        }
+    }
+    console.log(final_string)
+    return final_string
+}
 
-const myJoin = (arr, separator) => {
-  let new_string = "";
-  if (separator === undefined) {
-    separator = ",";
-  }
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === undefined || arr[i] === null) {
-      arr[i] = "";
-    }
-    if (i === 0) {
-      new_string += arr[i];
-    } else {
-      let add_separator = separator + arr[i];
-      new_string += add_separator;
-    }
-  }
-  console.log(new_string);
-  return new_string;
-};
-// myJoin(["hello", undefined, "world"], "-");
-// myJoin([null, "came, ", "saw, ", "conquered."], "I ");
+myJoin(['hello', null, 'world'], '-')

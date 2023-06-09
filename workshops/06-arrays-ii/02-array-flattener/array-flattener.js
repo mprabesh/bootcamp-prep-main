@@ -1,17 +1,16 @@
-// YOUR CODE BELOW
-const arrayFlattener=(arr)=>{
-    let final_arr=[]
-    for(let i=0;i<arr.length;i++){
-        if(Array.isArray(arr[i])){
-            for(let k=0;k<arr[i].length;k++){
-                final_arr.push(arr[i][k])
+function arrayFlattener(arr) {
+    let new_arr = []
+    for (let k = 0; k < arr.length; k++) {
+        let element = arr[k]
+        if (Array.isArray(element)) {
+            for (let i = 0; i < element.length; i++) {
+                new_arr.push(element[i])
             }
-        }else{
-            final_arr.push(arr[i])
+        } else {
+            new_arr.push(element)
         }
-
     }
-    return final_arr;
+    return new_arr
 }
 
-arrayFlattener([1,[2, 3], 4])
+console.log(arrayFlattener([1, [2, 3], 4]))
