@@ -1,17 +1,15 @@
 // YOUR CODE BELOW
-function frequencyAnalysis(word) {
-  let letterFrequency = {};
-  for (let i = 0; i < word.length; i++) {
-    let letter = word[i];
-    if (letter in letterFrequency) {
-      letterFrequency[letter]++;
-    } else {
-      letterFrequency[letter] = 1;
+function frequencyAnalysis(stringVal) {
+    let finalObj = {}
+    for (let k = 0; k < stringVal.length; k++) {
+        if (stringVal[k] in finalObj) {
+            finalObj[stringVal[k]] = finalObj[stringVal[k]] + 1
+        } else {
+            finalObj[stringVal[k]] = 1
+        }
     }
-  }
-  console.log(letterFrequency);
-  return letterFrequency;
+    console.log(finalObj)
+    return finalObj
 }
 
-// frequencyAnalysis("lordrama");
-frequencyAnalysis("abca");
+frequencyAnalysis('abca')

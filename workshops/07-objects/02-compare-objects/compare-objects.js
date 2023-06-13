@@ -1,16 +1,18 @@
-// YOUR CODE BELOW
-const compareObjects = (obj1, obj2) => {
-  for (let key in obj1) {
-    if (obj1[key] !== obj2[key]) {
-      return false;
+function compareObjects(obj1, obj2) {
+    let arr1 = Object.keys(obj1)
+    let arr2 = Object.keys(obj2)
+    if (arr1.length !== arr2.length) {
+        return false
     }
-  }
-  for (let key in obj2) {
-    if (obj2[key] !== obj1[key]) {
-      return false;
+    for (let k = 0; k < arr1.length; k++) {
+        if (arr1[k] !== arr2[k]) {
+            return false
+        }
+        if (obj1[arr1[k]] !== obj2[arr2[k]]) {
+            return false
+        }
     }
-  }
-  return true;
-};
+    return true
+}
 
-compareObjects({ name: "prabesh" }, { name: "sandesh", address: "bharatpur" });
+console.log(compareObjects({ name: 'nick1' }, { name: 'nick' }))

@@ -1,31 +1,10 @@
 // YOUR CODE BELOW
-function dogBreeder(name, age) {
-  let dogInfo = {};
-  if (age === undefined) {
-    if (typeof name === "number") {
-      age = name;
-      name = null;
-    } else {
-      name = name;
-      age = 0;
+function dogBreeder(name = 'Steve', age = 0) {
+    if (typeof arguments[0] === 'number') {
+        age = arguments[0]
+        name = 'Steve'
     }
-  }
-  if (!name) {
-    name = "Steve";
-  }
-  dogInfo["name"] = name;
-  dogInfo["age"] = age;
-  return dogInfo;
+    return { name: name, age: age }
 }
-console.log(dogBreeder("Marlo", 9));
 
-// can also be used with default parameters
-
-// function dogBreeder(name = "Steve", age = 0) {
-//   if (typeof name === "number") {
-//     age = name;
-//     name = "Steve";
-//   }
-//   let dogInfo = { name: name, age: age };
-//   return dogInfo;
-// }
+// console.log(dogBreeder(3))
