@@ -1,40 +1,26 @@
-// YOUR CODE BELOW
-function mostVowels(sentence) {
-  debugger;
-  let count = 0;
-  let final_word = "";
-  let word = "";
-  let vcount = 0;
-  for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] !== " " && i !== sentence.length - 1) {
-      word = word + sentence[i];
-      if (isVowel) {
-        // console.log("ax");
-        vcount = vcount + 1;
-      }
-    } else {
-      if (vcount > count) {
-        // console.log("set", word);
-        count = vcount;
-        final_word = word;
-      }
-      vcount = 0;
-      word = "";
+function mostVowels(stringPara) {
+    let vowel = 'aAeEiIoOUu'
+    let count = 0
+    let finalWord = ''
+    let vCount = 0
+    let word = ''
+    for (let k = 0; k < stringPara.length; k++) {
+        if (vowel.includes(stringPara[k])) {
+            vCount++
+        }
+        if (stringPara[k] === ' ' || stringPara[k] === '.') {
+            if (count < vCount) {
+                count = vCount
+                finalWord = word
+            }
+            word = ''
+            vCount = 0
+        } else {
+            word += stringPara[k]
+        }
     }
-  }
-  console.log(final_word);
-  return final_word;
-
-  function isVowel(char) {
-    let vowels = "aeiouAEIOU";
-    if (vowels.indexOf(char) >= 0) {
-      return true;
-    }
-    return false;
-  }
+    console.log(finalWord)
+    return finalWord
 }
 
-// mostVowels("my name is prabesh magar");
-//00098987777777777777777777777777777777777777777777777
-
-mostVowels("I am a keeper with some real rhythms");
+// mostVowels('Give her hell from Peeves.')
