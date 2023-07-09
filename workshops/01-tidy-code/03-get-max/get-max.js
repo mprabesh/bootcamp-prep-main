@@ -11,3 +11,5 @@ function getMax(f, s, a) {
         return a
     }
 }
+
+// console.log(getMax)
